@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Kata {
     public String convertIndex(int num, String low, String mid, String high){
         switch (num){
@@ -58,5 +61,32 @@ public class Kata {
             System.out.println(output);
             return output;
 
+    }
+    public int[] deadFish(String data){
+        List<Integer> output = new ArrayList<>();
+        int val = 0;
+        for(int i = 0; i < data.length(); i++){
+            switch (data.charAt(i)){
+                case 'i':
+                    val++;
+                    break;
+                case 'd':
+                    val--;
+                    break;
+                case 's':
+                    val *= val;
+                    break;
+                case 'o':
+                    output.add(val);
+                    break;
+            }
+        }
+        System.out.println(output);
+        int [] result = new int[output.size()];
+        for(int i = 0; i < result.length; i++){
+            result[i] = output.get(i).intValue();
+        }
+
+        return result;
     }
 }
