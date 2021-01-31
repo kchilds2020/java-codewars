@@ -89,4 +89,17 @@ public class Kata {
 
         return result;
     }
+    public String convertSecondsToHMS(int seconds){
+
+        int H = seconds / 3600;
+        seconds = seconds%3600;
+        int M = seconds / 60;
+        int S = seconds % 60;
+        String hString = H < 10 ? "0"+H : ""+H;
+        String mString = M < 10 ? "0"+M : ""+M;
+        String sString = S < 10 ? "0"+S : ""+S;
+
+
+        return hString + ":"+mString+":"+sString;
+    }
 }
