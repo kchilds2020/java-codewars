@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args){
         Kata kata = new Kata();
-
-        System.out.println(kata.convertSecondsToHMS(7));
+        String[] names = new String[] { "Sheldon", "Leonard", "Penny", "Rajesh", "Howard" };
+        System.out.println(kata.whoIsNext(names, 6));
     }
 }

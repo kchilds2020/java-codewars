@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Kata {
     public String convertIndex(int num, String low, String mid, String high){
@@ -101,5 +100,22 @@ public class Kata {
 
 
         return hString + ":"+mString+":"+sString;
+    }
+    public String whoIsNext(String[] names, int n){
+        Deque<String> queue = new ArrayDeque<>();
+
+        for(int i = 0; i < names.length; i++){
+            queue.add(names[i]);
+        }
+
+        System.out.println(queue);
+
+        for(int i = 0; i < n-1; i++){
+            String temp = queue.poll();
+            queue.add(temp);
+            queue.add(temp);
+        }
+
+        return queue.getFirst();
     }
 }
